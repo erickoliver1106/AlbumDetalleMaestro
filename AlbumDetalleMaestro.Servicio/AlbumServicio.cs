@@ -8,11 +8,13 @@ namespace AlbumDetalleMaestro.Servicio
     {
         private IAlbumRepositorio _repositorio;
         private ICancionServicio _cancionServicio;
+        private IAlbumRepositorio _repositorio2;
 
         public AlbumServicio()
         {
-            _repositorio = new AlbumRepositorio();
+            _repositorio = new AlbumDapperRepositorio();
             _cancionServicio = new CancionServicio();
+            _repositorio2 = new AlbumEFRepositorio();
         }
 
         public bool EliminarAlbum(Album album)
@@ -42,6 +44,11 @@ namespace AlbumDetalleMaestro.Servicio
                 }
                 return ok;
             }
+        }
+        public bool GuardarAlbum2(Album album)
+        {
+            _repositorio2.InsertarAlbum(album);
+            return true;
         }
 
         public List<Album> ObtenerAlbums()

@@ -7,5 +7,6 @@ namespace AlbumDetalleMaestro.Servicio
         List<Album> ObtenerAlbums();
         bool GuardarAlbum(Album album);
         bool EliminarAlbum(Album album);
+        bool GuardarAlbum2(Album album);
     }
 }

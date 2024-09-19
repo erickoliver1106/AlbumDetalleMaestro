@@ -3,7 +3,7 @@ using Dapper;
 
 namespace AlbumDetalleMaestro.Datos
 {
-    public class AlbumRepositorio : GenericoRepositorio, IAlbumRepositorio
+    public class AlbumDapperRepositorio : GenericoRepositorio, IAlbumRepositorio
     {
         public bool ActualizarAlbum(Album album)
         {

@@ -1,5 +1,7 @@
 using AlbumDetalleMaestro.Modelo;
 using AlbumDetalleMaestro.Servicio;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace AlbumDetalleMaestro.WinForm
 {
@@ -13,6 +15,7 @@ namespace AlbumDetalleMaestro.WinForm
             InitializeComponent();
             _album = new Album();
             _albumServicio = new AlbumServicio();
+            
         }
         private void AñadirCancion()
         {
@@ -59,7 +62,7 @@ namespace AlbumDetalleMaestro.WinForm
             _album.Autor = txtAuthor.Text;
             _album.FechaLanzamiento = txtReleaseDate.Value;
 
-            _albumServicio.GuardarAlbum(_album);
+            _albumServicio.GuardarAlbum2(_album);
         }
 
 
